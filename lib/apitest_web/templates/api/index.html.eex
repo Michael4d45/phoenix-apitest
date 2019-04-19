@@ -1,0 +1,19 @@
+<section>
+  <h1>Api test</h1>
+  <hr/>
+  <form id="new_user">
+    <label>Name<label>
+    <input name="name" type="text"/>
+    <label>Password<label>
+    <input name="password" type="password"/>
+    <button type="submit">Submit</button>
+  </form>
+  <div id="users">
+    <%= for user <- @users do %>
+    <div>
+      <%= user.name %> : <%= user.password %>
+    </div>
+    <% end %>
+  </div>
+</section>
+
