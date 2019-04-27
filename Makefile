@@ -1,5 +1,3 @@
-# I took a bunch of stuff from Ashton's make
-
 PROJ = apitest
 DB?=TRUE
 PORT?=4000
@@ -18,11 +16,11 @@ init:
 ifeq ("$(DB)","TRUE")
 	mix phx.new $(PROJ)
 	cp Makefile $(PROJ)/
+	cd $(PROJ); make install;
 	cd $(PROJ); mix ecto.create
 else
 	mix phx.new $(PROJ) -y --no-ecto
 	cp Makefile $(PROJ)/
-endif
 	cd $(PROJ); make install;
 
 seed:
